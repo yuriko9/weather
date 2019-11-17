@@ -2,8 +2,6 @@ var access_token = PropertiesService.getScriptProperties().getProperty('ACCESS_T
 var userID = PropertiesService.getScriptProperties().getProperty('USER_ID');
 var line_endpoint = 'https://api.line.me/v2/bot/message/reply';
 
-
-
 function doWeather(){
   var message = weather();
   sendLine(message);
@@ -16,16 +14,8 @@ function doTrash(){
   }
 }
 
-
-
-//LINEでメッセージを送信
+//Lineでメッセージを送信
 function sendLine(message) {
-  push(message);
-}
-
-
-//実際にメッセージを送信する関数
-function push(message) {
 
   var url = "https://api.line.me/v2/bot/message/push";
   var headers = {
